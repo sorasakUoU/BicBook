@@ -50,10 +50,23 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
             //No Space
             //Log.d("test", "L = " + idCardString.length());
+            checkIDcard();
 
         }
 
     } //clickSignUp
+
+    private void checkIDcard() {
+        if (idCardString.length() == 13) {
+            //id card True
+
+
+        } else {
+            //id card False
+            myToast("รหัสบัตรไม่ถูกต้อง ค่ะ");
+
+        }
+    } //checkIdCard
 
     private void myToast(String strToast) {
         Toast.makeText(SignUpActivity.this, strToast, Toast.LENGTH_SHORT).show();
