@@ -61,6 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
             //id card True
 
 
+
         } else {
             //id card False
             myToast("รหัสบัตรไม่ถูกต้อง ค่ะ");
