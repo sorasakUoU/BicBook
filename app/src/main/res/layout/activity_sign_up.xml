@@ -49,4 +49,12 @@
             android:inputType="text" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignUp"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:onClick="clickSignUpSign" />
 </RelativeLayout>
