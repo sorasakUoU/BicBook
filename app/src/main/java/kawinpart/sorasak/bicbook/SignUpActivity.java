@@ -1,5 +1,7 @@
 package kawinpart.sorasak.bicbook;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,7 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void checkIDcard() {
         if (idCardString.length() == 13) {
             //id card True
-
+            confirmData(idCardString, passwordString);
 
 
         } else {
@@ -68,6 +70,32 @@ public class SignUpActivity extends AppCompatActivity {
 
         }
     } //checkIdCard
+
+    private void confirmData(String idCardString, String passwordString) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.icon_myaccount);
+        builder.setTitle("โปรดตรวจสอบข้อมูล");
+        builder.setMessage("รหัสบัตรประชาชน = " + idCardString + "\n" +
+                "Password = " + passwordString);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                updataDataToServer();
+            } // OnClick
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            } // OnClick
+        });
+        builder.show();
+    } // confirmData
+
+    private void updataDataToServer() {
+
+    } // updataToServer
 
     private void myToast(String strToast) {
         Toast.makeText(SignUpActivity.this, strToast, Toast.LENGTH_SHORT).show();
