@@ -38,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
         //Check Space
         if (idCardString.equals("") || passwordString.equals("")) {
             //Have Space
-            myAlert("โปรดกรอกให้ ครบทุกช่อง ค่ะ");
+            myAlert("โปรดกรอกให้ ครบทุกช่องค่ะ");
+        } else if (idCardString.length() < 13 || idCardString.length() > 13 ) {
+            //Have Space
+            myAlert("โปรดเลขบัตรประชาชนให้ครบค่ะ");
         }
 
 
